@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "1984",
+        "author": "George Orwell",
+        "description": "Dystopian novel set in a totalitarian society."
+    },
+    {
+        "id": 2,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "description": "A novel about racial injustice in the Deep South."
+    },
+    {
+        "id": 3,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "description": "A story about the American Dream and its disillusion."
+    },
+    {
+        "id": 4,
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "description": "A narrative of the adventures of Ishmael and Captain Ahab."
+    },
+    {
+        "id": 6,
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "description": "A story about adolescent alienation and loss."
+    },
+    {
+        "id": 7,
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "description": "A dystopian novel exploring a technologically advanced future."
+    },
+    {
+        "id": 9,
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "description": "A fantasy novel about Bilbo Baggins' adventure."
+    }
+]
