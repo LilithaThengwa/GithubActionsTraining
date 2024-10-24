@@ -3,19 +3,17 @@ from app.service.book_service import BookService
 
 ui = Flask(__name__, template_folder="../../templates", static_folder="../../../resources/static")
 
-prefix_string = "/rest/api/ui"
-
 @ui.route(f"/")
 def home():
     return render_template('index.html')
 
-@ui.route(f"{prefix_string}/books", methods=['GET'])
+@ui.route("/books", methods=['GET'])
 def book_list():
     service = BookService()
     books = service.get_all_books() 
     return render_template('book_list.html', books=books)
 
-@ui.route(f"{prefix_string}/books/add", methods=['GET', 'POST'])
+@ui.route("/books/add", methods=['GET', 'POST'])
 def add_book():
     service = BookService()
 
