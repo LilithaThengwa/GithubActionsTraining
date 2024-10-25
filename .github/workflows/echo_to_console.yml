@@ -1,0 +1,17 @@
+name: Echo Statement Workflow
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  echo-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Echo statement
+        run: echo "This echo statement is for github actions training"
