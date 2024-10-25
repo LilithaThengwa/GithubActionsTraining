@@ -2,12 +2,12 @@ name: Data Backup
 
 on:
   schedule:
-    - cron: '*/2 * * * *'  
+    - cron: '*/5 * * * *'  
   workflow_dispatch:
 
 permissions:
   contents: write 
-  
+
 jobs:
   backup-data:
     runs-on: ubuntu-latest
