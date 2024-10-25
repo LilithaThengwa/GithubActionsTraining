@@ -17,6 +17,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p backups
           cp resources/book_list.json backups/book_list_$(date +%F).json
           git add backups/book_list_$(date +%F).json
           git commit -m "Backup of book_list.json on $(date +%F)"
