@@ -1,0 +1,22 @@
+name: Data Backup
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'  
+
+jobs:
+  backup-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Commit Backup
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          cp resources/book_list.json backups/book_list_$(date +%F).json
+          git add backups/book_list_$(date +%F).json
+          git commit -m "Backup of book_list.json on $(date +%F)"
+          git push
