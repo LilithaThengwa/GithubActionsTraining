@@ -24,6 +24,9 @@ def book_service(mock_repo):
 
 def test_create_book(book_service, mock_repo):
     book = {"id": 1, "title": "Test Book", "author": "Test Author"}
+    existing_books = [{"id": 1, "title": "Existing Book", "author": "Author A"}]
+
+    mock_repo.get_all.return_value = existing_books
     mock_repo.create.return_value = book  # Arrange
 
     result = book_service.create_book(book)  # Act
