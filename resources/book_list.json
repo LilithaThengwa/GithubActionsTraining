@@ -18,12 +18,6 @@
         "description": "A story about the American Dream and its disillusion."
     },
     {
-        "id": 4,
-        "title": "Moby Dick",
-        "author": "Herman Melville",
-        "description": "A narrative of the adventures of Ishmael and Captain Ahab."
-    },
-    {
         "id": 6,
         "title": "The Catcher in the Rye",
         "author": "J.D. Salinger",
