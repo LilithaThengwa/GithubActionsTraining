@@ -10,8 +10,8 @@ jobs:
    uses: ./.github/workflows/setup.yml
 
   test_create_book:
-    runs-on: ubuntu-latest
     needs: setup
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -21,8 +21,8 @@ jobs:
       run: pytest -v -k "test_create_book"
 
   test_get_book:
-    runs-on: ubuntu-latest
     needs: setup
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -32,8 +32,8 @@ jobs:
         run: pytest -v -k "test_get_book"
 
   test_update_book:
-    runs-on: ubuntu-latest
     needs: setup
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -43,8 +43,8 @@ jobs:
         run: pytest -v -k "test_update_book"
 
   test_delete_book:
-    runs-on: ubuntu-latest
     needs: setup
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -54,8 +54,8 @@ jobs:
         run: pytest -v -k "test_delete_book"
 
   test_get_all_books:
-    runs-on: ubuntu-latest
     needs: setup
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
