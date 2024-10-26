@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  test_create_book:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,5 +23,85 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt  
 
-    - name: Run tests
-      run: pytest -v
+    - name: Run test_create_book
+      run: pytest -v -k "test_create_book"
+
+  test_get_book:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+            python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt  
+
+      - name: Run test_get_book
+        run: pytest -v -k "test_get_book"
+
+  test_update_book:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+            python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt  
+
+      - name: Run test_update_book
+        run: pytest -v -k "test_update_book"
+
+  test_delete_book:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+            python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt  
+
+      - name: Run test_delete_book
+        run: pytest -v -k "test_delete_book"
+
+  test_get_all_books:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+            python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt  
+
+      - name: Run test_get_all_books
+        run: pytest -v -k "test_get_all_books"
