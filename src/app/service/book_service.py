@@ -9,7 +9,7 @@ class BookService:
         books = self.repository.get_all()
         
         if books:
-            max_id = max(book["id"] for book in books)
+                                                                max_id = max(book["id"] for book in books)
         else:
             max_id = 0
         
