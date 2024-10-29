@@ -1,0 +1,19 @@
+name: Scheduled Branch Cleanup
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Every Sunday at midnight
+  workflow-dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cleanup old branches
+        run: |
+          git fetch --prune
+          git branch --merged | grep -v 'main\|develop\|master' | xargs git branch -d
