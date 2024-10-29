@@ -8,24 +8,24 @@ This application is a FastAPI instance with Flask mounted on it.
 
 ```
 {APP}
-    |- resources
-	    |- static
-			|- js
-			|- css
-			|- images
-		|- book_list.json
-	|- src
-		|- app
-			|- controllers
-			|- service
-			|- gateway
-			|- repository
-			|- model
-			|- core
-		|- templates
-		|- tests
-		|- main.py
-		|- setup-python-venv.sh
+|- resources
+    |- static
+		|- js
+		|- css
+		|- images
+	|- book_list.json
+|- src
+	|- app
+		|- controllers
+		|- service
+		|- gateway
+		|- repository
+		|- model
+		|- core
+	|- templates
+	|- tests
+	|- main.py
+	|- setup-python-venv.sh
 ```
 
 ## The Application Folder
