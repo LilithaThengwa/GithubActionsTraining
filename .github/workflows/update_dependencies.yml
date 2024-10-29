@@ -7,6 +7,9 @@ on:
   schedule:
     - cron: "0 2 * * 1"  # every Monday at 2 AM
 
+permissions:
+  contents: write 
+
 jobs:
   install_dependencies:
     runs-on: ubuntu-latest
@@ -23,13 +26,13 @@ jobs:
     - name: Install pip-tools
       run:  pip install pip-tools
 
+    - name: Update dependencies in requirements.txt
+      run: pip-compile --upgrade requirements.txt
+
     - name: Commit and push changes
       run: |
-        pip-compile --upgrade
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git add requirements.txt
-        git commit -m "Update dependencies"
+        git diff --cached --quiet || git commit -m "Update dependencies"
         git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
