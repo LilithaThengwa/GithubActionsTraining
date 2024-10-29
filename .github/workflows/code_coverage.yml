@@ -27,7 +27,7 @@ jobs:
 
       - name: Run tests and check coverage
         run: |
-          pytest --cov=app tests/ > coverage_report.txt || true
+          pytest --cov=app src/tests/ > coverage_report.txt || true
           pip install coverage
           coverage html
 
