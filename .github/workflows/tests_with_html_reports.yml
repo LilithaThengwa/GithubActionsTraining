@@ -1,0 +1,36 @@
+name: Python Tests with HTML reports
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+jobs:
+  test_book_service:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt 
+        pip install pytest-html
+
+    - name: Run tests and generate self-contained HTML report with custom title
+      run: pytest --html=report_custom.html --self-contained-html --title="My Test Report"
+
+    - name: Upload reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-reports
+        path: |
+          report.html
+          report_custom.html
