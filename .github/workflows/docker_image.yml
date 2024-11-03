@@ -8,6 +8,9 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: "${{ secrets.DOCKER_USERNAME }}/githubactionstraining"
+      GIT_SHA: "${{ github.sha }}"
 
     steps:
       - name: Checkout code
@@ -20,8 +23,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t "${{ secrets.DOCKER_USERNAME }}/githubactionstraining:latest" .
+        run: docker build -t "$IMAGE_NAME:latest" -t "$IMAGE_NAME:$GIT_SHA" .
 
       - name: Push Docker image to Docker Hub
-        run: docker push "${{ secrets.DOCKER_USERNAME }}/githubactionstraining:latest"
+        run: |
+          docker push "$IMAGE_NAME:latest"
+          docker push "$IMAGE_NAME:$GIT_SHA"
 
