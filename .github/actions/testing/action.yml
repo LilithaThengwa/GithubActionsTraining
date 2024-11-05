@@ -1,6 +1,4 @@
-name: "Testing"
-
-description: "Run tests and generate a report"
+name: Testing
 
 runs:
   using: "composite"
