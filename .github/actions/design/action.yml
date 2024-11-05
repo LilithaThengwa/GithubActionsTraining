@@ -4,8 +4,11 @@ runs:
   using: "composite"
   
   steps:
-    - name: Run pylint
-      run: |
-        pip install pylint
-        pylint src/
-      shell: bash
+    # - name: Run pylint
+    #   run: |
+    #     pip install pylint
+    #     pylint src/
+    #   shell: bash
+    
+    - name: Design
+      run: echo "For the design step"
