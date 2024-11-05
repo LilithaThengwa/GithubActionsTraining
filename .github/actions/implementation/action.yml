@@ -5,4 +5,4 @@ runs:
   steps:
     - name: Compile Python files
       run: python -m compileall src/
-    shell: bash
+      shell: bash

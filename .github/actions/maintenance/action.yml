@@ -12,10 +12,10 @@ runs:
       run: |
         python -m pip install --upgrade pip
         pip install pip-review
-    shell: bash
+      shell: bash
 
     - name: Check for outdated dependencies
       run: |
         echo "Checking for outdated dependencies..."
         pip-review --local
-    shell: bash
+      shell: bash
