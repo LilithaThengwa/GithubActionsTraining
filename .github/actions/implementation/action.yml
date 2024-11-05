@@ -1,9 +1,8 @@
-name: "Implementation Check"
-
-description: "Build or compile the codebase"
+name: Implementation
 
 runs:
   using: "composite"
   steps:
     - name: Compile Python files
       run: python -m compileall src/
+    shell: bash

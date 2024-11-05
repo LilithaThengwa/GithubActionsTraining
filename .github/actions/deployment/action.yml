@@ -15,7 +15,8 @@ runs:
 
     - name: Build Docker image
       run: docker build -t "deploymentaction:latest" .
+    shell: bash
 
     - name: Push Docker image to Docker Hub
-      run: |
-        docker push "deploymentaction:latest"
+      run:  docker push "deploymentaction:latest"
+    shell: bash
