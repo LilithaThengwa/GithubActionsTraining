@@ -5,7 +5,9 @@ runs:
   steps:
     - name: Install testing dependencies
       run: pip install pytest pytest-html
+      shell: bash
       
     - name: Run tests
       run: pytest --html=report.html
+      shell: bash
 
