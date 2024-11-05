@@ -1,0 +1,13 @@
+name: "Testing"
+
+description: "Run tests and generate a report"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install testing dependencies
+      run: pip install pytest pytest-html
+      
+    - name: Run tests
+      run: pytest --html=report.html
+

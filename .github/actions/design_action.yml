@@ -1,0 +1,12 @@
+name: "Design Standards Verification"
+
+description: "Check code design with linting"
+
+runs:
+  using: "composite"
+  
+  steps:
+    - name: Run pylint
+      run: |
+        pip install pylint
+        pylint src/

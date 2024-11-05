@@ -1,0 +1,15 @@
+name: "Requirements Check"
+
+description: "Validate requirements are listed in requirements.txt"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check if requirements.txt exists
+      run: |
+        if [ ! -f requirements.txt ]; then
+          echo "requirements.txt not found!"
+          exit 1
+        fi
+    - name: Install dependencies
+      run: pip install -r requirements.txt

@@ -1,0 +1,32 @@
+name: SDLC Workflow
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  sdlc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Requirements
+        uses: ./.github/actions/requirements_action
+
+      - name: Design Verification
+        uses: ./.github/actions/design_action
+
+      - name: Implementation
+        uses: ./.github/actions/implementation_action
+
+      - name: Testing
+        uses: ./.github/actions/testing_action
+
+      - name: Deployment
+        uses: ./.github/actions/deployment_action
+
+      - name: Maintenance
+        uses: ./.github/actions/maintenance_action
