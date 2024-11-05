@@ -1,6 +1,4 @@
-name: "Requirements Check"
-
-description: "Validate requirements are listed in requirements.txt"
+name: Requirements Check
 
 runs:
   using: "composite"
@@ -11,5 +9,8 @@ runs:
           echo "requirements.txt not found!"
           exit 1
         fi
+      shell: bash
+
     - name: Install dependencies
       run: pip install -r requirements.txt
+      shell: bash
