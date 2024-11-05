@@ -12,4 +12,4 @@ runs:
     
     - name: Design
       run: echo "For the design step"
-    shell: bash
+      shell: bash
